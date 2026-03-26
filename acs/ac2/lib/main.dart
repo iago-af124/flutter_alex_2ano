@@ -77,6 +77,13 @@ class _TelaCalcState extends State<TelaCalc> {
     });
   }
 
+  void rodar_tudo() {
+    tempo_viagem();
+    combustivel_necessario();
+    combustivel_restante();
+    energia_cinetica();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,8 +150,9 @@ class _TelaCalcState extends State<TelaCalc> {
                 label: const Text('Calcular Energia Cinetica'),
               ),
               ElevatedButton.icon(
-                onPressed: energia_cinetica,
-                label: const Text('Calcular Tudo'))
+                onPressed: rodar_tudo,
+                label: const Text('Calcular Tudo'),
+              ),
             ],
           ),
           Text('Tempo de Viagem: $tempo'),
