@@ -1,31 +1,31 @@
-import 'dart:math' as math;
+import 'dart:math';
 import 'package:calc/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'custom_textfield.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(const app());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class app extends StatelessWidget {
+  const app({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Alexapp',
-      home: const MyHomePage(),
+      home: const home(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class home extends StatefulWidget {
+  const home({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<home> createState() => _home();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _home extends State<home> {
 
   final TextEditingController _MetaController = TextEditingController();
   final TextEditingController _MesesController = TextEditingController();
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Simulação realizada com sucesso'),
-        duration: const Duration(seconds: 8),
+        duration: const Duration(seconds: 4),
       )
     );
   }
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Dados removidos com sucesso'),
-        duration: const Duration(seconds: 8),
+        duration: const Duration(seconds: 4),
       )
     );
   }
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Dados de exemplo carregados'),
-        duration: const Duration(seconds: 8),
+        duration: const Duration(seconds: 4),
       )
     );
   }
@@ -134,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
     double valorinicial = double.tryParse(_ValorInicialController.text) ?? 0;
 
     setState(() {
-      montanteFinal = valorinicial * math.pow(1 + taxa, meses);
+      montanteFinal = valorinicial * pow(1 + taxa, meses);
       total_investido = valorinicial + (aporte*meses);
       lucro = montanteFinal - total_investido;
       mf = montanteFinal - meta;
@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Text('Perfil Financeiro: $perfil'),
               Text('Total Investido: $total_investido'),
               Text('Lucro: $lucro'),
-              Text('$msgmeta'),
+              Text(msgmeta),
             ],
           ),
         ),

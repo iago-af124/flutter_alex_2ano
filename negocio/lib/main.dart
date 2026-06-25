@@ -15,6 +15,8 @@ class MainApp extends StatelessWidget {
   }
 }
 class MinhaTela extends StatelessWidget{
+  const MinhaTela({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
