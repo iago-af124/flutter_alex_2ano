@@ -31,14 +31,14 @@ class Home extends StatefulWidget {
 }
 
 class _home extends State<Home> {
-  String opcao = '120';
+  double opcao = 120;
   bool _selecionadoseguro = false;
   bool _selecionadogps = false;
   bool motorista = false;
   double dias = 1;
   double motoristaValor = 100.0;
 
-  void carroselecao(String novaOpcao) {
+  void carroselecao(double novaOpcao) {
     setState(() {
       opcao = novaOpcao;
     });
@@ -77,13 +77,13 @@ class _home extends State<Home> {
   }
 
   double valorVeiculo() {
-    return double.parse(opcao);
+    return opcao;
   }
 
   String nomeVeiculo() {
-    if (opcao == '120') {
+    if (opcao == 120) {
       return 'Carro Econômico';
-    } else if (opcao == '180') {
+    } else if (opcao == 180) {
       return 'SUV';
     } else {
       return 'Carro de Luxo';
@@ -159,9 +159,9 @@ class _home extends State<Home> {
               'Seguro: ${textoBool(_selecionadoseguro)}\n'
               'GPS: ${textoBool(_selecionadogps)}\n'
               'Motorista adicional: ${textoBool(motorista)}\n'
-              'Valor bruto: $valorBruto\n'
-              'Desconto: $valorDesconto\n'
-              'Valor final: $valorFinal\n'
+              'Valor bruto: ${valorBruto()}\n'
+              'Desconto: ${valorDesconto()}\n'
+              'Valor final: ${valorFinal()}\n'
               'Categoria: ${categoriaCliente()}',
             ),
           ),
@@ -230,9 +230,9 @@ class _home extends State<Home> {
                 linhaResumo('Seguro:', textoBool(_selecionadoseguro)),
                 linhaResumo('GPS:', textoBool(_selecionadogps)),
                 linhaResumo('Motorista adicional:', textoBool(motorista)),
-                linhaResumo('Valor bruto:', '$bruto'),
-                linhaResumo('Desconto:', '$desconto'),
-                linhaResumo('Valor final:', '$finalLocacao'),
+                linhaResumo('Valor bruto:', bruto.toString()),
+                linhaResumo('Desconto:', desconto.toString()),
+                linhaResumo('Valor final:', finalLocacao.toString()),
                 linhaResumo('Categoria:', categoriaCliente()),
 
                 SizedBox(height: 20),
