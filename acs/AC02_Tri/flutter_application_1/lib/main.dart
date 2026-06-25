@@ -155,7 +155,7 @@ class _home extends State<Home> {
           content: SingleChildScrollView( //usei isso para que a tela possa descer ou seja rolavel aprendi com Pachu :) to usando em tudo ent usei nesse pra evitar problema
             child: Text(
               'Veículo escolhido: ${nomeVeiculo()}\n'
-              'Quantidade de dias: ${dias.toInt()}\n'
+              'Quantidade de dias: ${dias.toInt()}\n' //usei pra pular a linha o \n
               'Seguro: ${textoBool(_selecionadoseguro)}\n'
               'GPS: ${textoBool(_selecionadogps)}\n'
               'Motorista adicional: ${textoBool(motorista)}\n'
